@@ -5,7 +5,7 @@ class xbmc {
     file { '/home/drone/.config/autostart':
         require => File['/home/drone/.config'],
         ensure  => 'directory',
-        source  => '/vagrant/resources/home/drone/.config/autostart',
+        source  => '/tmp/hexaeder/home/drone/.config/autostart',
         recurse => true,
         owner   => 'drone'
     }
