@@ -9,7 +9,7 @@ class fceux {
     file { '/home/drone/.fceux/fceux.conf':
         require => File['/home/drone/.fceux'],
         ensure  => 'present',
-        source  => '/tmp/hexaeder/resources/home/drone/.fceux/fceux.conf',
+        source  => '/tmp/hexaeder/resources/home/drone/.fceux/fceux.cfg',
         owner   => 'drone'
     }
     file { '/home/drone/xbmcdata/thumbs/nes':
