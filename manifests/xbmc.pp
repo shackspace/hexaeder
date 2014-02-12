@@ -21,4 +21,18 @@ class xbmc {
         require => File['/home/drone/xbmcdata'],
         ensure  => 'directory'
     }
+    
+    exec { 'xbmc::git-clone::skin.cirrus.extended.v3':
+        require => Package['xbmc', 'git'],
+        creates => '/home/drone/.xbmc/addons/skins.cirrus.extended.v3',
+        command => '/usr/bin/git clone https://github.com/paradix/skin.cirrus.extended.v3.git',
+        cwd     => '/home/drone/.xbmc/addons'
+    }
+    
+    exec { 'xbmc::git-clone::plugin.program.advanced.launcher':
+        require => Package['xbmc', 'git'],
+        creates => '/home/drone/.xbmc/addons/plugin.program.advanced.launcher',
+        command => '/usr/bin/git clone https://github.com/Angelscry/plugin.program.advanced.launcher.git',
+        cwd     => '/home/drone/.xbmc/addons'
+    }
 }

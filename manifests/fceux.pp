@@ -8,7 +8,7 @@ class fceux {
     }
     file { '/home/drone/.fceux/fceux.conf':
         require => File['/home/drone/.fceux'],
-        ensure  => 'present',
+        ensure  => 'file',
         source  => '/tmp/hexaeder/resources/home/drone/.fceux/fceux.cfg',
         owner   => 'drone'
     }
